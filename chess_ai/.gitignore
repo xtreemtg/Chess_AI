@@ -1,0 +1,12 @@
+.ipynb_checkpoints
+.env
+.idea
+.DS_Store
+*.pgn
+*.h5
+*.zip
+*.tar
+*.exe
+test.py
+model1
+processed_dataset.npz

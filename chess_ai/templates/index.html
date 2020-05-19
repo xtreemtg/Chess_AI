@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Chess</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.js"></script>
+   <!-- <script type="text/javascript"> $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}; </script>-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='frontend/css/chessboard-1.0.0.min.css')}}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='frontend/css/chessboard-1.0.0.css')}}">
+    <script src="{{ url_for('static', filename='frontend/js/chessboard-1.0.0.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='frontend/js/chessboard-1.0.0.js') }}"></script>
+
+</head><body>
+<div id="myBoard" style="width: 600px"></div>
+<div>
+<button onclick="testButton()">Test</button>
+<button onclick="selfRandomPlay()">Self Play</button>
+<button onclick="takeBack()">Take Back</button>
+<button onclick="newGame()">Reset</button>
+<select class="form-control" id="responseType">
+    <option value="C">Computer</option>
+<option value="H">Human</option>
+<option value="R">Random Computer</option>
+</select>
+<label for="depth">Choose depth</label>
+<select class="form-control" id="depth">
+    <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+</select>
+    </div>
+    </body>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html lang="en"><head>
+    <title>Chess</title>
+    <link rel="stylesheet" href="../static/chessboardjs-1.0.0/css/chessboard-1.0.0.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/chessboardjs-1.0.0/js/chessboard-1.0.0.js"></script>
+    <script type="text/javascript" src="../static/chessboardjs-1.0.0/js/chessboard-1.0.0.min.js"></script>
+
+</head><body>
+<div id="myBoard" style="width: 400px"></div>
+<script type="text/javascript" src="../static/scripts.js"></script>
+    </body>
+</html>-->
