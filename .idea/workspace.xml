@@ -2,47 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0e1ffae-831b-4bb9-b1cf-2a39b55b6c80" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/.idea/Chess_AI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/NN.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/chess_engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/con_nn_keras.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/generate_train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/grandmasters_dataset.npz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/model2/saved_model.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/model2/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/model2/variables/variables.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/css/chessboard-1.0.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/css/chessboard-1.0.0.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/bB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/bK.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/bN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/bP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/bQ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/bR.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/wB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/wK.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/wN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/wP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/wQ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/img/chesspieces/wikipedia/wR.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/js/chessboard-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/js/chessboard-1.0.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/static/test_script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chess_ai/transposition_table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess_ai/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/chess_ai/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chess_ai/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="195">
+              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -372,26 +333,44 @@
       <option name="presentableId" value="Default" />
       <updated>1589657475397</updated>
       <workItem from="1589657496659" duration="31031000" />
-      <workItem from="1589802704129" duration="17592000" />
+      <workItem from="1589802704129" duration="18178000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1589871421955</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589871421955</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48623000" />
+    <option name="totallyTimeSpent" value="49209000" />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="23" width="1379" height="866" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2550486" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550486" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32945737" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32945737" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39922482" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32945737" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32945737" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32945737" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
@@ -659,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chess_ai/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="195">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,6 @@
 .ipynb_checkpoints
 .env
-.idea
+*.idea
 .DS_Store
 *.pgn
 *.h5
@@ -10,3 +10,6 @@
 test.py
 model1
 processed_dataset.npz
+grandmasters_dataset.npz
+__pycache__
+*.pyc
