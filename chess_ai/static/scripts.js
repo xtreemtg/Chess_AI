@@ -2,7 +2,7 @@
 var board = null;
 var game = new Chess();
 var $status = $('#status');
-var $fen = $('#fen');
+var $current_fen = $('#current_fen');
 var $pgn = $('#pgn');
 
 
@@ -25,15 +25,40 @@ function makeComputerMove() {
   $.post("/best_move", {'fen': fen, 'depth': depth}).done(function (data) {
     console.log(data);
     game.move(data);
-    board.position(game.fen())
-  })
+    updateStatus();
+    board.position(game.fen());
+
+  });
 }
+
+var setFen = function (new_fen) {
+ console.log(game.fen());
+ console.log(new_fen);
+ game.load(new_fen);
+ updateStatus();
+ board.position(new_fen);
+};
+
+var alertGameOverStatus = function () {
+  GAMEOVER = 'Game Over! ';
+  if (game.in_checkmate()){
+    loser = game.turn() === 'b' ? "Black" : "White";
+    alert(GAMEOVER + loser + ' is in checkmate')
+  } else if(game.in_stalemate()){
+    alert(GAMEOVER + loser + ' is in stalemate')
+  } else if (game.in_threefold_repetition()){
+    alert(GAMEOVER + 'Threefold repetition')
+  } else if (game.insufficient_material()){
+    alert(GAMEOVER + 'Insufficient material')
+  }
+};
 
 var takeBack = function() {
     game.undo();
     if (game.turn() != "w") {
         game.undo();
     }
+    updateStatus();
     board.position(game.fen());
 };
 
@@ -79,12 +104,16 @@ function onDrop (source, target) {
 
   // illegal move
   if (move === null) return 'snapback';
+  updateStatus();
 
   var e = document.getElementById("responseType");
   var type = e.options[e.selectedIndex].value;
   // make random legal move for black
   if (type === 'R') window.setTimeout(makeRandomMove, 250);
   else if(type === 'C') makeComputerMove();
+
+  console.log('fff');
+  if (game.game_over()) alertGameOverStatus()
 }
 
 // update the board position after the piece snap
@@ -122,7 +151,7 @@ function updateStatus () {
   }
 
   $status.html(status);
-  $fen.html(game.fen());
+  $current_fen.html(game.fen());
   $pgn.html(game.pgn())
 }
 

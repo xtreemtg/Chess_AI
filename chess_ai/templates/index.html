@@ -12,6 +12,10 @@
 
 </head><body>
 <div id="myBoard" style="width: 600px"></div>
+<div><label>Status:</label>
+<div id="status"></div>
+<label>FEN:</label>
+<div id="current_fen"></div></div>
 <div>
 <button onclick="testButton()">Test</button>
 <button onclick="selfRandomPlay()">Self Play</button>
@@ -30,6 +34,14 @@
     <option value="4">4</option>
     <option value="5">5</option>
 </select>
+<!--    <form id = 'fen'>-->
+<!--    Insert FEN<input type='text' name='fen_inpt'>-->
+<!-- <button onclick="setFen()">Submit</button>-->
+<!--</form>-->
+    <br>
+FEN<input type="text" name="fen" id="fen" size="60"><br>
+  <button onclick="setFen(document.getElementById('fen').value)">Submit</button>
+
     </div>
     </body>
 <script src="{{ url_for('static', filename='scripts.js') }}"></script>
