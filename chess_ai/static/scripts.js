@@ -13,18 +13,25 @@ function makeRandomMove () {
   if (possibleMoves.length === 0) return;
 
   var randomIdx = Math.floor(Math.random() * possibleMoves.length);
-  game.move(possibleMoves[randomIdx]);
-  board.position(game.fen())
+  var move = possibleMoves[randomIdx];
+  game.move(move);
+  board.position(game.fen());
+  debugger;
+  $.get('/move/' + move);
 }
 
-function makeComputerMove() {
+function makeComputerMove(depth, move) {
   b = game.moves();
   fen = game.fen();
-  var e = document.getElementById("depth");
-  var depth = e.options[e.selectedIndex].value;
-  $.post("/best_move", {'fen': fen, 'depth': depth}).done(function (data) {
+  var e = document.getElementById("engineControl");
+  e = e.options[e.selectedIndex].value;
+  var e2 = document.getElementById("engineType");
+  e2 = e2.options[e2.selectedIndex].value;
+  san = move['san'];
+  debugger;
+  $.post("/best_move", {'fen': fen, 'depth': depth, 'verbose': e, 'type': e2, 'move':move.san}).done(function (data) {
     console.log(data);
-    game.move(data);
+    game.move(data['move']);
     updateStatus();
     board.position(game.fen());
 
@@ -37,6 +44,7 @@ var setFen = function (new_fen) {
  game.load(new_fen);
  updateStatus();
  board.position(new_fen);
+ $.get('/load_fen/' + new_fen)
 };
 
 var alertGameOverStatus = function () {
@@ -60,11 +68,13 @@ var takeBack = function() {
     }
     updateStatus();
     board.position(game.fen());
+    $.get('/takeback')
 };
 
 var newGame = function() {
     game.reset();
     board.start();
+    $.get('/reset')
 };
 
 function _selfRandomPlay () {
@@ -105,15 +115,24 @@ function onDrop (source, target) {
   // illegal move
   if (move === null) return 'snapback';
   updateStatus();
+  $.get('/move/' + move['san']);
+  if (!game.game_over()) {
 
-  var e = document.getElementById("responseType");
-  var type = e.options[e.selectedIndex].value;
-  // make random legal move for black
-  if (type === 'R') window.setTimeout(makeRandomMove, 250);
-  else if(type === 'C') makeComputerMove();
 
-  console.log('fff');
-  if (game.game_over()) alertGameOverStatus()
+
+    var e = document.getElementById("responseType");
+    var type = e.options[e.selectedIndex].value;
+    // make random legal move for black
+    if (type === 'R') window.setTimeout(makeRandomMove, 50);
+    else if (type === 'C') {
+      var e2 = document.getElementById("depth");
+      var depth = e2.options[e2.selectedIndex].value;
+      let timeout = depth === '1' || depth === '2' ? 50 : 5;
+      console.log(timeout);
+      window.setTimeout(makeComputerMove, timeout, depth, move);
+    }
+  }
+  //if (game.game_over()) alertGameOverStatus()
 }
 
 // update the board position after the piece snap
@@ -172,5 +191,6 @@ var config = {
   onSnapEnd: onSnapEnd
 };
 board = Chessboard('myBoard', config);
+newGame();
 
 

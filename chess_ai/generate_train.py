@@ -1,6 +1,6 @@
 import chess
 import chess.pgn
-from state import State
+from position_encoder import Position
 import numpy as np
 import os
 import re
@@ -33,11 +33,12 @@ def save_games(dir_name, game_dir_name, games):
 
 def get_data():
     X, y = [], []
+    p = Position()
     for dirs in os.listdir("games")[2:]:
         if not 'DS_Store' in dirs:
             print(dirs)
             for games in os.listdir("games" + '/' + dirs):
-                print(f'Parsing game: {games} in {dirs}, got {len(X)} positions')
+                #print(f'Parsing game: {games} in {dirs}, with {len(X)} positions')
                 pgn = open(os.path.join("games" + '/' + dirs, games))
                 game = chess.pgn.read_game(pgn)
                 if not game :#or game.headers.get('Variant', 'Standard') != 'Standard':
@@ -49,11 +50,11 @@ def get_data():
                     continue
                 values = {'1/2-1/2': 0, '0-1': -1, '1-0': 1}
                 res = game.headers['Result']
-                if res not in values:
+                if res not in values or values[res] == 0:
                     continue
                 value = values[res]
                 for i, move in enumerate(game.mainline_moves()):
-                    ser = State(board).serialize()
+                    ser = p.binary_encode(board)
                     board.push(move)
                     X.append(ser)
                     y.append(value)
@@ -66,7 +67,7 @@ def get_data():
 def main():
 
     X, y = get_data()
-    np.savez("grandmasters_dataset.npz", X, y)
+    np.savez("grandmasters_dataset12x8x8.npz", X, y)
 
 
 
