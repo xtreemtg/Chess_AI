@@ -24,7 +24,6 @@ LOWER = -1
 EXACT = 0
 UPPER = 1
 
-piece_names = {'N': 2, 'B': 3, 'R': 4, 'Q': 5, }
 
 # based off ideas from chess programming wiki
 piece_values = {
@@ -45,7 +44,7 @@ piece_values = {
 piece_square_tables = {
     1: np.array([  # pawn
         0, 0, 0, 0, 0, 0, 0, 0,  # a1 - a8
-        5, 10, 10, -20, -20, 10, 10, 5,  # b1 - b8
+        5, 10, 10, -20, -20, 10, 10, 5,  # b1 - b8 and so on..
         5, -5, -10, 0, 0, -10, -5, 5,
         0, 0, 0, 20, 20, 0, 0, 0,
         5, 5, 10, 25, 25, 10, 5, 5,
@@ -117,60 +116,6 @@ piece_square_tables = {
 }
 
 model = models.load_model('model-12x8x8')
-
-
-class Node_:
-    def __init__(self, move, depth, val=None):
-        self.move = move
-        self.depth = depth
-        self.val = val
-        self.children = []
-
-    def __repr__(self):
-        return self.move + ' : ' + f'{self.val:.3f}, ' + f'{len(self.children)} children'
-
-    def add_child(self, node):
-        self.children.append(node)
-
-    def set_val(self, val):
-        self.val = val
-
-
-class MinMaxTree:
-    PATH = {}
-
-    def __init__(self, root, turn):
-        self.root = root
-        self.turn = turn
-
-    def _traverse(self, node, turn, move_list):
-        if len(node.children) == 0:
-            return node.val
-
-        best_move = None
-        if turn:
-            max_val = -1.001
-            for child in node.children:
-                val = self._traverse(child, not turn, move_list)
-                if val > max_val:
-                    max_val = val
-                    best_move = child.move
-            move_list.append((f'{max_val:.3f}', best_move))
-            return max_val
-        else:
-            min_val = 1.001
-            for child in node.children:
-                val = self._traverse(child, turn, move_list)
-                if val < min_val:
-                    min_val = val
-                    best_move = child.move
-            move_list.append((f'{min_val:.3f}', best_move))
-            return min_val
-
-    def print_best_path(self):
-        move_list = []
-        res = self._traverse(self.root, self.turn, move_list)
-        print(move_list)
 
 
 class ChessEngine:
