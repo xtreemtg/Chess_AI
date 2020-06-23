@@ -16,7 +16,8 @@ response type can all be adjusted at the bottom. Additionally, one can play from
 move order is displayed on the terminal; working on displaying it to the UI.
 
 
-<img width="1379" alt="chess_AI_ex" src="https://user-images.githubusercontent.com/29835953/83353666-bf775480-a319-11ea-9108-5ef2c09a6959.png">
+<img width="1041" alt="Chess_UI_ex" src="https://user-images.githubusercontent.com/29835953/85395092-3a94ea80-b515-11ea-9b8b-3576664d79dc.png">
+
 
 
 **as of June 23rd, 2020:**  
