@@ -19,8 +19,9 @@ move order is displayed on the terminal; working on displaying it to the UI.
 <img width="1379" alt="chess_AI_ex" src="https://user-images.githubusercontent.com/29835953/83353666-bf775480-a319-11ea-9108-5ef2c09a6959.png">
 
 
-**as of May 31, 2020:**  
-Code is a very rough draft, yet is a fully functioning engine and UI. The Neural Network is trained and technically works but does not output optimal moves and it is what I will be focusing on mainly. The conventional engine works and has on occasion beat me. The other thing to focus on is the CSS and making the UI more pretty. 
+**as of June 23rd, 2020:**  
+Code is a still rough draft, yet is a fully functioning engine and UI. The CNN is trained and technically works but does not output optimal moves. I am attempting to shift focus to Reinforcement learning as well.
+The conventional engine works and has on occasion beat me. 
 
 
 ## Authors
